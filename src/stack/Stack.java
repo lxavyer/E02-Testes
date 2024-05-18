@@ -20,10 +20,10 @@ public class Stack<Trem> {
 
     public Trem desempilhar() throws Exception {
         if(this.estaVazia()) {
-            return null;
+            throw new Exception("empty stack");
         }
-
-        return this.vetor.get(this.topo);
+        this.topo--;
+        return this.vetor.remove(this.topo);
     }
 
     public boolean estaVazia() {
@@ -31,6 +31,7 @@ public class Stack<Trem> {
     }
 
     public int tamanho() {
+
         return this.vetor.size();
     }
 }
